@@ -1,0 +1,31 @@
+Source: node-json2module
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Section: javascript
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-rw <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-json2module
+Vcs-Git: https://salsa.debian.org/js-team/node-json2module.git
+Homepage: https://github.com/mbostock/json2module
+Rules-Requires-Root: no
+
+Package: node-json2module
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , node-rw
+ , nodejs:any
+Description: Convert a JSON object to an ES6 module
+ For example, given a package.json file and run this through json2module,
+ you’ll get ES6 module as output.
+ .
+ This is particularly useful for exporting a version number defined in your
+ package.json file when using Rollup. Unlike rollup-plugin-json, which enables
+ Rollup to parse JSON directly, json2module creates standard ES6 modules that
+ can be consumed by any client.
+ .
+ Node.js is an event-based server-side JavaScript engine.
